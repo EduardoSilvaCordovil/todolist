@@ -20,6 +20,7 @@ public class FilterTaskAuth extends OncePerRequestFilter {
 
     @Override
     public void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws IOException, ServletException {
+        System.out.println("CHEGOU NO FILTRO!!!");
 
         var servletPath = request.getServletPath();
         System.out.println("PATH" + servletPath);
@@ -51,6 +52,7 @@ public class FilterTaskAuth extends OncePerRequestFilter {
                 }
             }
         } else {
+            System.out.println("CHEGOU NO FILTRO!!!");
             filterChain.doFilter(request, response);
         }
     }
